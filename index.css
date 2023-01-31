@@ -5,11 +5,13 @@ body{
     width: 1200px;
 };
 
-/* container */
+/* container*/
 .container{
     margin: 2em 150px;
     width: 50%;
 }
+
+
 
 /* main */
 .head{
@@ -18,4 +20,52 @@ body{
     text-align: center;
     color: #fff;
     background-color: rgb(78, 78, 179);
+}
+
+.todo-list{
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+    counter-reset: todos;
+}
+
+.todo-list li {
+    margin-top: 1px;
+    padding: 20px 16px;
+    background-color: #ffffff;
+    color: #5c8bf0;
+}
+  
+.todo-list li::before {
+    counter-increment: todos;
+    content: counter(todos);
+    padding: 6px 10px;
+    margin-right: 10px;
+    border: 1px solid #5c8bf0;
+    border-radius: 16px;
+}
+
+.todo-list .is-important {
+    font-weight: bold;
+    color: #ffffff;
+    background-color: rgb(221, 57, 84);
+  }
+  
+  .todo-list .is-important::before {
+    border: none;
+    color: #f98f2d;
+    background-color: #ffffff;
+  }
+
+/* toggle + is-important */
+.todo-toggle{
+    border: none;
+    background-color: rgb(47, 47, 197);
+}
+
+.is-important{
+    /* border: none; */
+    font-weight: bold;
+    background-color: rgb(221, 57, 84);
+    color: #fff;
 }
